@@ -1,1 +1,3 @@
-PD9waHAKaGlnaGxpZ2h0X2ZpbGUoImluZGV4LnBocCIpOwo/Pg==
+<?php
+highlight_file("index.php");
+?>
