@@ -3,3 +3,6 @@ alert http any any -> any any (msg:"EXE Store"; filemagic:"executable for MS Win
 alert http any any -> any any (msg:"MSI Store"; filemagic:"MSI Installer"; filestore; sid:1000002; rev:1;)
 alert http any any -> any any (msg:"BIN Store"; filemagic:"MacBinary III"; filestore; sid:1000003; rev:1;)
 curl -XPOST -u admin:cb180e2597a598aca14dcff68efefb9a9544 -H 'Content-Type: application/json' -L "http://127.0.0.1:8080/api/auth/register" -d "{ \"additional_info\": \"test\", \"login\": \"test\", \"recaptcha\":\"test\",\"email\": \"test@cyber.local\"}" 
+
+
+curl -s -X POST "http://127.0.0.1/api/auth/login" -H  "accept: application/json" -H  "Content-Type: application/json" -d "{\"password\":\"06219d943137ee8cfa1b0d03fbae3075831e\",\"login\":\"admin\"}" | sed -n 's/.*"token": "\([^ ]\+\)".*/\1/p'
