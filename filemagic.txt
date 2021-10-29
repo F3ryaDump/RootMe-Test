@@ -6,3 +6,6 @@ curl -XPOST -u admin:cb180e2597a598aca14dcff68efefb9a9544 -H 'Content-Type: appl
 
 
 curl -s -X POST "http://127.0.0.1/api/auth/login" -H  "accept: application/json" -H  "Content-Type: application/json" -d "{\"password\":\"06219d943137ee8cfa1b0d03fbae3075831e\",\"login\":\"admin\"}" | sed -n 's/.*"token": "\([^ ]\+\)".*/\1/p'
+
+
+Working student in Master's degree in Cyberdefence, looking for an internship of 8 weeks in the field of IT. Hardworking and ambitious individual, the realization of long project in binomial during my two years in the corporate world (Orange, Air Force Base) allowed me and allow me to increase continuously my knowledge in various domains (IaC, Python programming, Virtualization, network logs analysis...). Excellent team worker and keen and willingness to learn and develop new skills, , I am eager to join a passionate team.
