@@ -73,9 +73,9 @@ for item in list_final:
     worksheet.write(row,col+3,str(item[3]))
     worksheet.write(row,col+4,str(item[4]))
     worksheet.write(row,col+5,str(item[5]))
-    worksheet.write(row,col+5,str(item[6]))
-    worksheet.write(row,col+5,str(item[7]))
-    worksheet.write(row,col+5,str(item[8]))
+    worksheet.write(row,col+6,str(item[6]))
+    worksheet.write(row,col+7,str(item[7]))
+    worksheet.write(row,col+8,str(item[8]))
 
     row +=1
 
