@@ -11,6 +11,7 @@ eve_json = os.popen(cmd,"r").read().rstrip().split("\n")
 for i in eve_json: eve_json[eve_json.index(i)] = i[:-1][1:]
 
 list_final = []
+cpt=0
 for name in eve_json:
     # Score total
     cmd = 'cat ./Out_Scan_JSON.json | jq \'.[] | select(.filename == \"'+name+'\") | .score_total\''
@@ -29,7 +30,7 @@ for name in eve_json:
     capa = os.popen(cmd,"r").read().rstrip()[:-1][1:]
 
     # MalwareBazaar
-    cmd = 'cat ./Out_Scan_JSON.json | jq \'.[] | select(.filename == \"'+name+'\") | .scan.malware_bazaar\''
+    cmd = 'cat ./Out_Scan_JSON.json | jq \'.[] | select(.filename == \"'+name+'\") | .scan.malware_bazaar.score\''
     malware_bazaar = os.popen(cmd,"r").read().rstrip()[:-1][1:]
     
     # VirusTotal
@@ -37,8 +38,11 @@ for name in eve_json:
     virus_total = os.popen(cmd,"r").read().rstrip()[:-1][1:]
     
     # MalShare
-    cmd = 'cat ./Out_Scan_JSON.json | jq \'.[] | select(.filename == \"'+name+'\") | .scan.malshare\''
+    cmd = 'cat ./Out_Scan_JSON.json | jq \'.[] | select(.filename == \"'+name+'\") | .scan.malshare.score\''
     malshare = os.popen(cmd,"r").read().rstrip()[:-1][1:]
+
+    cpt +=1
+    print(cpt)
 
     try:
         elem = [name,float(score),"-",float(clamav),float(loki),float(capa),float(malware_bazaar),float(virus_total),float(malshare)]
